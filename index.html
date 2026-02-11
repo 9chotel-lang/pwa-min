@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1f2937" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Mini Checklist" />
+    <link rel="apple-touch-icon" href="icons/icon-192.svg" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Mini Checklist PWA</title>
+  </head>
+  <body>
+    <main class="app">
+      <h1>Mini Checklist</h1>
+      <p class="description">iOS Safari対応の簡易チェックリストPWA</p>
+
+      <form id="taskForm" class="task-form">
+        <label class="sr-only" for="taskInput">作業内容</label>
+        <input id="taskInput" name="task" type="text" maxlength="100" placeholder="やることを入力" required />
+        <button type="submit">追加</button>
+      </form>
+
+      <label class="today-filter">
+        <input id="todayOnly" type="checkbox" />
+        今日の作業だけ表示
+      </label>
+
+      <section class="task-section">
+        <h2>未完了</h2>
+        <ul id="pendingList" class="task-list"></ul>
+      </section>
+
+      <section class="task-section">
+        <h2>完了</h2>
+        <ul id="completedList" class="task-list"></ul>
+      </section>
+    </main>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
